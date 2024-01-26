@@ -1,5 +1,5 @@
 const { fLerDatos } = require("./lerDatos.js");
-
+const { fBorrarDatos } = require("./borrarDatos.js")
 
 
 
@@ -11,4 +11,6 @@ const { fLerDatos } = require("./lerDatos.js");
 
 
 module.exports = { 
-    fLerDatos };
+    fLerDatos,
+    fBorrarDatos
+ };

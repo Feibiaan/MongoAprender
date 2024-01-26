@@ -1,6 +1,8 @@
+import { eventosEGB } from "./helpers.js";
 function preparandoDatos(datos) {
   let datosMap = datos.documentos.map((documento) => {
     let _div = document.createElement("div");
+    _div.setAttribute("id",`${documento._id}`);
     document.querySelector(".lista").append(_div);
     let _span = document.createElement("span");
 
@@ -28,18 +30,22 @@ function preparandoDatos(datos) {
 
       let imx = document.createElement("img");
       imx.setAttribute("src", `./assets/${imaxenes}.png`);
-      imx.setAttribute("name", `${imaxenes}`);
+      imx.setAttribute("class", `${imaxenes}`);
       _div.append(imx);
     }
     //document.querySelector(".")
     
 });
-document.querySelectorAll('#borrar')[0].addEventListener("click",(e) => {
-    console.log("hola", e.target)
+let _divInterno = document.querySelector('div')
+_divInterno.addEventListener("click", () => {
+  let refTodosBorrar = document.querySelectorAll(".borrar");
+  let refTodosEditar = document.querySelectorAll(".editar");
+  let refTodosGardar = document.querySelectorAll(".guardar");
+  
+  eventosEGB(refTodosEditar);
+  eventosEGB(refTodosGardar);
+  eventosEGB(refTodosBorrar);
 })
-/* document.querySelectorAll[0].addEventListener("click",(e) => {
-    console.log("hola", e.target)
-}) */
 }
 
 async function preguntarDatos() {
