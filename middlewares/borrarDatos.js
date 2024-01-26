@@ -12,11 +12,11 @@ async function fBorrarDatos (req, res) {
         const { id } = req.params;
         const db = client.db(database);
         const coll = db.collection(coleccion);
-        console.log('tipo id: ', typeof id)
-        // const dato = {
-        // _id: id
-        // }
-        // await coll.deleteOne(dato);
+        // console.log('tipo id: ', typeof id)
+        const dato = {
+        _id: parseInt(id)
+        }
+        await coll.deleteOne(dato);
         // find va aqui
         // const dbDelete = await coll.deleteMany(doc);
 
